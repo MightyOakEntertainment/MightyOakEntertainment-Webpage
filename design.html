@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--
+Copyright 2023 Mighty Oak Entertainment
+Copyright 2023 Alexander Achorn <a.achorn@gmail.com>
+Author : Alexander Achorn
+-->
+
+<html>
+<head>
+<title>Mighty Oak Entertainment - Design</title>
+<link rel="icon" type="image/x-icon" href="Logos/Mighty-Oak-Entertainment.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Fonts */
+@font-face {
+    font-family: 'copperplate_gothic_light';
+    src: url('Fonts/coprgtl.woff2') format('woff2'),
+         url('Fonts/coprgtl.woff') format('woff'),
+         url('Fonts/coprgtl.ttf') format('truetype'),
+         url('Fonts/coprgtl.svg#copperplate_gothic_lightRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+	
+@font-face {
+    font-family: 'copperplate_gothic_bold';
+    src: url('Fonts/coprgtb.woff2') format('woff2'),
+         url('Fonts/coprgtb.woff') format('woff'),
+         url('Fonts/coprgtb.ttf') format('truetype'),
+         url('Fonts/coprgtb.svg#copperplate_gothic_boldRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+	
+@font-face {
+    font-family: 'constantiaregular';
+    src: url('Fonts/constan.woff2') format('woff2'),
+         url('Fonts/constan.woff') format('woff'),
+         url('Fonts/constan.ttf') format('truetype'),
+         url('Fonts/constan.svg#constantiaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'unzialish';
+    src: url('Fonts/unzialish.woff2') format('woff2'),
+         url('Fonts/unzialish.woff') format('woff'),
+         url('Fonts/unzialish.ttf') format('truetype'),
+         url('Fonts/unzialish.svg#unzialish') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Txt Style */
+body {
+  font-family: 'constantiaregular';
+  background-color: #111;
+  color: white;
+}
+
+.titleFont {
+	font-family:'unzialish';
+	color: #f1f1f1; 
+	text-shadow: 0px 0px 22px black;
+	text-align: center; 
+	white-space: nowrap;
+	font-size: 100px;
+	margin-top: -300px;
+}
+
+.subTitleFont {
+	font-family:'copperplate_gothic_light'; 
+	font-size: 24px; 
+	margin-left: 30%; 
+	margin-right: 30%;
+	margin-bottom: 10px;
+}
+
+.descriptionFont {
+	font-family:'constantiaregular'; 
+	font-size:18px; 
+	margin-left: 30%; 
+	margin-right: 30%;
+}
+
+.footer {
+font-family: 'copperplate_gothic_light'; 
+color: white;
+text-align: center;
+}
+
+.footer a {
+  padding: 0px 10px 0px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: darkgray;
+}
+
+
+.footerCopyright {
+font-family: 'constantiaregular'; 
+text-align: center;
+margin-Top: 10px;
+margin-Bottom: 10px;
+font-size:10px;
+}
+
+/* Visual Style */
+.titleFrame {
+  height: 302px;
+  margin-Top: 100px;
+  margin-Bottom: 100px;
+  margin-left: -8px;
+  margin-right: -8px;
+  overflow:hidden;
+}
+
+.titleFrame div {
+  filter:drop-shadow(0 0 10px black) drop-shadow(0 0 10px black) drop-shadow(0 0 10px black) drop-shadow(0 0 5px black) drop-shadow(0 0 5px black);
+  height:100%;
+
+}
+
+.titleFrame div::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:black;
+  -webkit-mask:
+    url('https://i.imgur.com/wtJLI2z.png') center,
+    linear-gradient(#fff 0 0);
+   -webkit-mask-composite:destination-out;
+   mask-composite:exclude;
+   -webkit-mask-repeat: repeat-x;
+}
+
+.circleMask {
+	-webkit-mask-image: url('https://i.imgur.com/IdI7TWp.png');
+	-webkit-mask-composite:destination-out;
+	mask-composite:exclude;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	mask-image: url('https://i.imgur.com/IdI7TWp.png');
+	-webkit-mask-position: left;
+	mask-position: left;
+	float: left;
+	margin-right: 30px;
+	margin-top: -30px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #0D0D0D;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  font-family:'copperplate_gothic_bold'; 
+  white-space: nowrap;
+  padding: 8px 8px 8px 12px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #818181;
+  display:inherit;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  Left: 0px;
+  font-size: 36px;
+  margin-left: 0px;
+}
+
+.openbtn {
+  position: fixed;
+  z-index: 1;
+  top: 6px;
+  Left: 8px;
+  font-size: 36px;
+  background: none;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.openbtn:hover {
+  color: darkgray;
+}	
+
+.bioCell {
+    box-sizing: border-box;
+	padding: 20px;
+    float:left;
+	width: 50%;
+}
+
+.oddNumBioText {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+	
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 900px, change the style of the sidenav */
+@media screen and (max-height: 900px) {
+  .sidebar a {font-size: 18px;}
+}
+
+@media screen and (max-width: 1000px) {
+	.titleFrame {height: 222px;}
+	.titleFrame div::after {-webkit-mask: url('https://i.imgur.com/17mag8F.png') center, linear-gradient(#fff 0 0); -webkit-mask-composite:destination-out; mask-composite:exclude; -webkit-mask-repeat: repeat-x;}
+	.titleFont {font-size: 60px; margin-top: -240px; margin-bottom: 80px;}
+	.subTitleFont { margin-left: 20%; margin-right: 20%; }
+	.descriptionFont { margin-left: 20%; margin-right: 20%; }
+}
+
+@media screen and (max-width: 600px) {
+	.titleFrame {height: 162px;}
+	.titleFrame div::after {-webkit-mask: url('https://i.imgur.com/zAnNvYx.png') center, linear-gradient(#fff 0 0); -webkit-mask-composite:destination-out; mask-composite:exclude; -webkit-mask-repeat: repeat-x;}
+	.titleFont {font-size: 40px; margin-top: -200px;}
+	.subTitleFont { margin-left: 10%; margin-right: 10%; }
+	.descriptionFont { margin-left: 10%; margin-right: 10%; }
+	.bioCell {width: 100%;}
+    .oddNumBioText { margin-left: 0%; margin-right: 0%;}
+}
+
+</style>
+</head>
+<!--
+ELZTlnd
+-->
+<body>
+
+<div id="MightySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+  <a href="index.html">Home Page</a>
+  <a href="about.html">About</a>
+  <a href="coding.html">Coding</a>
+  <a href="design.html">Design</a>
+  <a href="3dmodeling.html">3D Modeling</a>
+  <a href="fpv.html">FPV</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div id="design">
+	<button class="openbtn" onclick="openNav()">&#9776;</button>
+<div style="background: url('Backgrounds/Starfeild 1080p.png') 50% 50%/cover; margin-top: -10px" class="titleFrame">
+	<div>
+	</div>
+</div>
+<h2 class="titleFont">Design</h2>
+
+
+
+
+</div>
+
+
+<script>
+function openNav() {
+  document.getElementById("MightySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("MightySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+
+<footer class="footer">
+  <div>
+  <a href="index.html">Home Page</a>
+  <a href="about.html">About</a>
+  <a href="coding.html">Coding</a>
+  <a href="design.html">Design</a>
+  <a href="3dmodeling.html">3D Modeling</a>
+  <a href="fpv.html">FPV</a>
+  <a href="contact.html">Contact</a>
+  </div>
+<div class="footerCopyright">Mighty Oak Entertainment Copyright &#169 2023 Alexander Achorn</div>
+</footer>
+</body>
+</html> 

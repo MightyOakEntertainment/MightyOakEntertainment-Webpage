@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--
+Copyright 2023 Mighty Oak Entertainment
+Copyright 2023 Alexander Achorn <a.achorn@gmail.com>
+Author : Alexander Achorn
+-->
+
+<html>
+<head>
+<title>Mighty Oak Entertainment - Coding</title>
+<link rel="icon" type="image/x-icon" href="Logos/Mighty-Oak-Entertainment.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Fonts */
+@font-face {
+    font-family: 'copperplate_gothic_light';
+    src: url('Fonts/coprgtl.woff2') format('woff2'),
+         url('Fonts/coprgtl.woff') format('woff'),
+         url('Fonts/coprgtl.ttf') format('truetype'),
+         url('Fonts/coprgtl.svg#copperplate_gothic_lightRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+	
+@font-face {
+    font-family: 'copperplate_gothic_bold';
+    src: url('Fonts/coprgtb.woff2') format('woff2'),
+         url('Fonts/coprgtb.woff') format('woff'),
+         url('Fonts/coprgtb.ttf') format('truetype'),
+         url('Fonts/coprgtb.svg#copperplate_gothic_boldRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+	
+@font-face {
+    font-family: 'constantiaregular';
+    src: url('Fonts/constan.woff2') format('woff2'),
+         url('Fonts/constan.woff') format('woff'),
+         url('Fonts/constan.ttf') format('truetype'),
+         url('Fonts/constan.svg#constantiaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'unzialish';
+    src: url('Fonts/unzialish.woff2') format('woff2'),
+         url('Fonts/unzialish.woff') format('woff'),
+         url('Fonts/unzialish.ttf') format('truetype'),
+         url('Fonts/unzialish.svg#unzialish') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Txt Style */
+body {
+  font-family: 'constantiaregular';
+  background-color: #111;
+  color: white;
+}
+
+.titleFont {
+	font-family:'unzialish';
+	color: #f1f1f1; 
+	text-shadow: 0px 0px 22px black;
+	text-align: center; 
+	white-space: nowrap;
+	font-size: 100px;
+	margin-top: -300px;
+}
+
+.subTitleFont {
+	font-family:'copperplate_gothic_light'; 
+	font-size: 24px; 
+	margin-left: 30%; 
+	margin-right: 30%;
+	margin-bottom: 10px;
+}
+
+.descriptionFont {
+	font-family:'constantiaregular'; 
+	font-size:18px; 
+	margin-left: 30%; 
+	margin-right: 30%;
+}
+
+.footer {
+font-family: 'copperplate_gothic_light'; 
+color: white;
+text-align: center;
+}
+
+.footer a {
+  padding: 0px 10px 0px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: darkgray;
+}
+
+
+.footerCopyright {
+font-family: 'constantiaregular'; 
+text-align: center;
+margin-Top: 10px;
+margin-Bottom: 10px;
+font-size:10px;
+}
+
+/* Visual Style */
+.titleFrame {
+  height: 302px;
+  margin-Top: 100px;
+  margin-Bottom: 100px;
+  margin-left: -8px;
+  margin-right: -8px;
+  overflow:hidden;
+}
+
+.titleFrame div {
+  filter:drop-shadow(0 0 10px black) drop-shadow(0 0 10px black) drop-shadow(0 0 10px black) drop-shadow(0 0 5px black) drop-shadow(0 0 5px black);
+  height:100%;
+
+}
+
+.titleFrame div::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:black;
+  -webkit-mask:
+    url('https://i.imgur.com/wtJLI2z.png') center,
+    linear-gradient(#fff 0 0);
+   -webkit-mask-composite:destination-out;
+   mask-composite:exclude;
+   -webkit-mask-repeat: repeat-x;
+}
+
+.circleMask {
+	-webkit-mask-image: url('https://i.imgur.com/zOhuYyl.png');
+	-webkit-mask-composite:destination-out;
+	mask-composite:exclude;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	mask-image: url('https://i.imgur.com/zOhuYyl.png');
+	-webkit-mask-position: left;
+	mask-position: left;
+	float: left;
+	margin-right: -10px;
+	margin-top: 10px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #0D0D0D;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  font-family:'copperplate_gothic_bold'; 
+  white-space: nowrap;
+  padding: 8px 8px 8px 12px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #818181;
+  display:inherit;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  Left: 0px;
+  font-size: 36px;
+  margin-left: 0px;
+}
+
+.openbtn {
+  position: fixed;
+  z-index: 1;
+  top: 6px;
+  Left: 8px;
+  font-size: 36px;
+  background: none;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.openbtn:hover {
+  color: darkgray;
+}	
+
+.bioCell {
+    box-sizing: border-box;
+	padding: 20px;
+    float:left;
+	width: 50%;
+}
+
+.oddNumBioText {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+	
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 900px, change the style of the sidenav */
+@media screen and (max-height: 900px) {
+  .sidebar a {font-size: 18px;}
+}
+
+@media screen and (max-width: 1000px) {
+	.titleFrame {height: 222px;}
+	.titleFrame div::after {-webkit-mask: url('https://i.imgur.com/17mag8F.png') center, linear-gradient(#fff 0 0); -webkit-mask-composite:destination-out; mask-composite:exclude; -webkit-mask-repeat: repeat-x;}
+	.titleFont {font-size: 60px; margin-top: -240px; margin-bottom: 80px;}
+	.subTitleFont { margin-left: 20%; margin-right: 20%; }
+	.descriptionFont { margin-left: 20%; margin-right: 20%; }
+}
+
+@media screen and (max-width: 600px) {
+	.titleFrame {height: 162px;}
+	.titleFrame div::after {-webkit-mask: url('https://i.imgur.com/zAnNvYx.png') center, linear-gradient(#fff 0 0); -webkit-mask-composite:destination-out; mask-composite:exclude; -webkit-mask-repeat: repeat-x;}
+	.titleFont {font-size: 40px; margin-top: -200px;}
+	.subTitleFont { margin-left: 10%; margin-right: 10%; }
+	.descriptionFont { margin-left: 10%; margin-right: 10%; }
+	.bioCell {width: 100%;}
+    .oddNumBioText { margin-left: 0%; margin-right: 0%;}
+}
+
+</style>
+</head>
+<!--
+.tt/
+--><body>
+
+<div id="MightySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+  <a href="index.html">Home Page</a>
+  <a href="about.html">About</a>
+  <a href="coding.html">Coding</a>
+  <a href="design.html">Design</a>
+  <a href="3dmodeling.html">3D Modeling</a>
+  <a href="fpv.html">FPV</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div id="coding">
+	<button class="openbtn" onclick="openNav()">&#9776;</button>
+	<div style="background: url('Backgrounds/PXL_20201206_212111123.jpg') 50% 30%/cover; margin-top: -10px" class="titleFrame">
+		<div></div>
+	</div>
+	<h2 class="titleFont">Coding</h2>
+</div>
+
+
+<script>
+function openNav() {
+  document.getElementById("MightySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("MightySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<p class="descriptionFont">After completing Algonquin Colleges 3-year Game Development course I have just over 3 years of experience with C++, and 2 years with C#. A large portion of my person projects have been in a mixture of C, python, java and recently Assembly.</p>
+
+<p class="descriptionFont" style="text-align: justify; margin-top: 40px;">I've become quite partial to C++ but I've also found by this point any language is fairly simple with time to pick up. I enjoy writing high level and adaptive code. If you can't just look at it, know what it does and how to use it I can write it better!
+</p>
+
+<h4 class="subTitleFont">Projects:</h4>
+<a href="https://github.com/Selene-Studios/Project-Artemis-Releases/releases">
+<p class="descriptionFont" style="text-align: justify; float: left; margin-right: 30px; margin-top: 30px">
+    <img src="Logos/Selene Logo Outline.png" alt="Project Artemis" width="100">
+</p>
+<h3 class="descriptionFont" style="text-align: justify; margin-top: 30px;"> Project Artemis: </h3></a>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">A VR recreation of the upcoming Artemis missions to the moon. From suit up to landing join us on an exploration of the moon and its wonders. This project was our teams Capstone assignment in association with the Canadian Aviation and Space Museum. I was responsible for project management, the players IK, code infrastructure and design just to name a few.</p>
+
+<a href="https://github.com/Dracrius/pocketrgb-en">
+<p class="descriptionFont" style="text-align: justify; float: left; margin-right: 30px; margin-top: 30px">
+    <img class="circleMask" src="Images/green-title.bmp" alt="Pocketrgb-en" height="100">
+</p>
+<h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;"> Pocket Monsters - Red, Green, and Blue Version: </h3></a>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">pocketrgb-en is a Gen 1 disassembly, based on the Japanese releases titled 'Pocket Monsters' shortened to Pokémon. The goal was to create the best 1 to 1 translation of the Japanese games that I could manage since none exist to date! I have taken the time to compare videos of the intro's and screenshots of the games to pixel perfectly match the colors and timing of the original Japanese games. I also went on a massive bug hunt and solved a slew of common issues. With the cherry on top being my real pride of the project which is having replaced EVERY Pokémon, Character, Place and Badges name to translations of those used in the original releases.</p>
+
+<a href="https://github.com/Dracrius/MightyOakEngine">
+<p class="descriptionFont" style="text-align: justify; float: left; margin-right: -30px; margin-top: 30px">
+    <img class="circleMask" src="Images/3D_Physics_Playground.png" alt="MightyOakEngine" height="100">
+</p>
+<h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;">MightyOakEngine - A Game Engine Made from Scratch in C++: </h3></a>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">A simple engine made from scratch in c++ during my last Game and Graphics class. All and all I am quite proud of it. The last things we did were add the ability to loading OBJ files, converting the project to a component system and add lighting. My next goal after the class was to add shadows and multi pass rendering but the rest of my courses took priority. </p>
+
+<a href="https://github.com/Dracrius/W22-_Inertial_Sketch">
+<p class="descriptionFont" style="text-align: justify; float: left; margin-right: 20px; margin-top: 30px">
+    <img class="circleMask" src="Images/2023-04-26 10.31.12.png" alt="RCRacing" height="100">
+</p>
+<h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;">Inertial Sketch - RCRacing: </h3></a>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">As a warmup in for our final years Capstone project we did what the professors liked to call Mini Cap in year 2. This was a term long team project to make a tech demo for a game. I lead a team in making a rough recreation of the classic ReVolt. The project also includes rudimentary VR support.</p>
+
+<a href="https://github.com/Dracrius/GAM1571_21F">
+<p class="descriptionFont" style="text-align: justify; float: left; margin-right: 40px; margin-top: 30px">
+    <img class="circleMask" src="Images/2023-04-26 09.26.50.png" alt="GAM1571_21F" height="100">
+</p>
+<h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;">Game and Graphics II: </h3></a>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">Before we got to making our own engine completely in Game and Graphic III we made small games using windows built in rendering functions. This repo contains all the work I did for that class, including the final game which is a collect and avoid puzzle game using sokoban assets.</p>
+
+<a href="https://gitlab.com/Dracrius/OpenRGB">
+<p class="descriptionFont" style="text-align: justify; float: left; margin-right: 30px; margin-top: 30px">
+    <img src="Logos/OpenRGB.png" alt="OpenRGB" height="100">
+</p>
+<h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;">OpenRGB: </h3></a>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">OpenRGB is an open source RGB lighting controller that doesn't depend on manufacturer software. For Windows, Linux, MacOS. I originally found it before I made a version of QMK for ZSA keyboards to support it. After which I took up fixing the Philips Hue Entertainment Group implementation and looking through the issues list when I had time. Through this I learned how to reverse engineer the lighting protocols used for a few different GPUs to help other users get their hardware working.</p>
+
+<a href="https://github.com/Dracrius/zsa_openrgb_qmk_firmware">
+<p class="descriptionFont" style="text-align: justify; float: left; margin-right: 10px; margin-top: 30px">
+    <img class="circleMask" src="Backgrounds/PXL_20201206_212111123.jpg" alt="openrgb_qmk" height="100">
+</p>
+<h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;">ZSA's QMK Firmware With OpenRGB Support: </h3></a>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">QMK is an open-source firmware for microcontrollers that control computer keyboards. The ZSA ErgoDox EZ runs on a custom fork of qmk that did not have OpenRGB support. After finding out about OpenRGB and finding the right code needed I took the time to port over OpenRGB support for all ZSA keyboards. This means an ErgoDox can be included in a full light setup and supported by all animations.</p>
+
+<footer class="footer">
+  <div>
+  <a href="index.html">Home Page</a>
+  <a href="about.html">About</a>
+  <a href="coding.html">Coding</a>
+  <a href="design.html">Design</a>
+  <a href="3dmodeling.html">3D Modeling</a>
+  <a href="fpv.html">FPV</a>
+  <a href="contact.html">Contact</a>
+  </div>
+<div class="footerCopyright">Mighty Oak Entertainment Copyright &#169 2023 Alexander Achorn</div>
+</footer>
+</body>
+</html> 
