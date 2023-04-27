@@ -73,7 +73,7 @@ body {
 
 .subTitleFont {
 	font-family:'copperplate_gothic_light'; 
-	font-size: 24px; 
+	font-size: 34px; 
 	margin-left: 30%; 
 	margin-right: 30%;
 	margin-bottom: 10px;
@@ -218,9 +218,9 @@ font-size:10px;
 	width: 50%;
 }
 
-.oddNumBioText {
-    margin-left: 25%;
-    margin-right: 25%;
+.videoCell {
+    width: 600px;
+	height: 338px;
 }
 	
 #main {
@@ -247,8 +247,11 @@ font-size:10px;
 	.titleFont {font-size: 40px; margin-top: -200px;}
 	.subTitleFont { margin-left: 10%; margin-right: 10%; }
 	.descriptionFont { margin-left: 10%; margin-right: 10%; }
-	.bioCell {width: 100%;}
-    .oddNumBioText { margin-left: 0%; margin-right: 0%;}
+	.videoCell {width: 400px; height: 225px}
+}
+
+@media screen and (max-width: 400px) {
+	.videoCell {width: 200px; height: 112px}
 }
 
 </style>
@@ -274,6 +277,21 @@ font-size:10px;
 	<h2 class="titleFont">FPV</h2>
 </div>
 
+<p class="descriptionFont" style="text-align: justify; margin-top: 20px;">Not quite sure why it took me so long to find FPV since it has been nothing but a dream, but it is a new excitement in my life as of 2022. After helping a co-worker at the dive shop fix up a few of his drones I was hooked. I've since gotten my Basic Operations drone Pilot Certification and registered my personal drones with Transport Canada. This summer I hope to complete the testing needed to get my Advanced Operations Certificate so that I can begin flying for commercial jobs and in close courters to people.</p>
+
+<p class="descriptionFont" style="text-align: justify; margin-top: 20px;">Until then I'll share the first edited video I made for Hal-con's Closing Ceremonies in 2022 and a link to the Mighty Oak FPV YouTube channel where I have began to post lightly edited videos from some of my flights.</p>
+
+<p style="text-align: center; margin-top: 60px;">
+<iframe src="https://www.youtube.com/embed/7YeKjq-b7N8" class="videoCell">
+</iframe>
+</p>
+
+<a href="https://www.youtube.com/@MightyOakFPV">
+<p class="subTitleFont" style="text-align: center; margin-top: 0px; margin-bottom: 80px">
+    <img style="margin-top: 10px" src="Logos/yt_icon_rgb.png" alt="YouTube" width="36">
+	Mighty Oak FPV
+</p>
+</a>
 
 <script>
 function openNav() {
