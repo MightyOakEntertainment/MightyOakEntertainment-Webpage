@@ -211,20 +211,26 @@ font-size:10px;
   color: darkgray;
 }	
 
-.bioCell {
-    box-sizing: border-box;
-	width: 10%;
-	float: left;
-}
-
-.firstBioCell {
+.firstGitCell {
     box-sizing: border-box;
 	width: 10%;
 	float: left;
 	margin-left: 30%;
 }
 
-.lastBioCell {
+.secondGitCell {
+    box-sizing: border-box;
+	width: 10%;
+	float: left;
+}
+
+.thirdGitCell {
+    box-sizing: border-box;
+	width: 10%;
+	float: left;
+}
+
+.lastGitCell {
     box-sizing: border-box;
 	width: 10%;
 	float: left;
@@ -242,12 +248,23 @@ font-size:10px;
   .sidebar a {font-size: 18px;}
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1600px) {
 	.titleFrame {height: 222px;}
 	.titleFrame div::after {-webkit-mask: url('https://i.imgur.com/17mag8F.png') center, linear-gradient(#fff 0 0); -webkit-mask-composite:destination-out; mask-composite:exclude; -webkit-mask-repeat: repeat-x;}
 	.titleFont {font-size: 60px; margin-top: -240px; margin-bottom: 80px;}
 	.subTitleFont { margin-left: 20%; margin-right: 20%; }
 	.descriptionFont { margin-left: 20%; margin-right: 20%; }
+	.firstGitCell {width: 15%; margin-left: 20%;}
+	.secondGitCell {width: 15%;}
+	.thirdGitCell {width: 15%;}
+	.lastGitCell {width: 15%; margin-right: 20%;}
+}
+
+@media screen and (max-width: 800px) {
+	.firstGitCell {width: 30%; margin-left: 20%;}
+	.secondGitCell {width: 30%; margin-right: 20%;}
+	.thirdGitCell {width: 30%; margin-left: 20%;}
+	.lastGitCell {width: 30%; margin-right: 20%;}
 }
 
 @media screen and (max-width: 600px) {
@@ -256,7 +273,10 @@ font-size:10px;
 	.titleFont {font-size: 40px; margin-top: -200px;}
 	.subTitleFont { margin-left: 10%; margin-right: 10%; }
 	.descriptionFont { margin-left: 10%; margin-right: 10%; }
-	.bioCell {width: 100%;}
+	.firstGitCell {width: 100%; margin-left: 0%;}
+	.secondGitCell {width: 100%; margin-right: 0%;}
+	.thirdGitCell {width: 100%; margin-left: 0%;}
+	.lastGitCell {width: 100%; margin-right: 0%;}
 }
 
 </style>
@@ -297,13 +317,13 @@ function closeNav() {
 }
 </script>
 
-<p class="descriptionFont">After completing Algonquin Colleges 3-year Game Development course I have just over 3 years of experience with C++, and 2 years with C#. A large portion of my person projects have been in a mixture of C, python, java and recently Assembly.</p>
+<p class="descriptionFont">After completing Algonquin Colleges 3-year Game Development course I have just over 3 years of experience with C++, and 2 years with C#. A large portion of my personal projects have been in a mixture of C, python, java and recently Assembly.</p>
 
 <p class="descriptionFont" style="text-align: justify; margin-top: 40px; margin-bottom: 40px;">I've become quite partial to C++ but I've also found by this point any language is fairly simple with time to pick up. I enjoy writing high level and adaptive code. If you can't just look at it, know what it does and how to use it I can write it better!
 </p>
 
 <a href="https://gitlab.com/Dracrius">
-<div class="firstBioCell">
+<div class="firstGitCell">
     <p style="text-align: center; margin-Top: -20px;">
         <img src="Logos/gitlab-logo-500.svg" alt="GitLab" width="150">
     </p>
@@ -311,7 +331,7 @@ function closeNav() {
 </div>
 </a>
 <a href="https://github.com/Dracrius">
-<div class="bioCell">
+<div class="secondGitCell">
     <p style="text-align: center;">
         <img src="Logos/github-mark-white.svg" alt="GitHub" width="100">
     </p>
@@ -319,7 +339,7 @@ function closeNav() {
 </div>
 </a>
 <a href="https://github.com/Selene-Studios">
-<div class="bioCell">
+<div class="thirdGitCell">
     <p style="text-align: center;">
         <img src="Logos/github-mark-white.svg" alt="GitHub" width="100">
     </p>
@@ -327,7 +347,7 @@ function closeNav() {
 </div>
 </a>
 <a href="https://github.com/MightyOakEntertainment">
-<div class="lastBioCell">
+<div class="lastGitCell">
     <p style="text-align: center;">
         <img src="Logos/github-mark-white.svg" alt="GitHub" width="100">
     </p>
@@ -362,14 +382,14 @@ function closeNav() {
     <img class="circleMask" src="Images/2023-04-26 10.31.12.png" alt="RCRacing" height="100">
 </p>
 <h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;">Inertial Sketch - RCRacing: </h3></a>
-<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">As a warmup in for our final years Capstone project we did what the professors liked to call Mini Cap in year 2. This was a term long team project to make a tech demo for a game. I lead a team in making a rough recreation of the classic ReVolt. The project also includes rudimentary VR support.</p>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">As a warmup for our final years Capstone project we did what the professors liked to call Mini Cap in year 2. This was a term long team project to make a tech demo for a game. I lead a team in making a rough recreation of the classic ReVolt. The project also includes rudimentary VR support.</p>
 
 <a href="https://github.com/Dracrius/GAM1571_21F">
 <p class="descriptionFont" style="text-align: justify; float: left; margin-right: 40px; margin-top: 30px">
     <img class="circleMask" src="Images/2023-04-26 09.26.50.png" alt="GAM1571_21F" height="100">
 </p>
 <h3 class="descriptionFont" style="text-align: justify; margin-top: 50px;">Game and Graphics II: </h3></a>
-<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">Before we got to making our own engine completely in Game and Graphic III we made small games using windows built in rendering functions. This repo contains all the work I did for that class, including the final game which is a collect and avoid puzzle game using sokoban assets.</p>
+<p class="descriptionFont" style="text-align: justify; margin-top: -20px;">Before we got to making our own engine in Game and Graphic III we made small games using windows built in rendering functions. This repo contains all the work I did for that class, including the final game which is a collect and avoid puzzle game using sokoban assets.</p>
 
 <a href="https://gitlab.com/Dracrius/OpenRGB">
 <p class="descriptionFont" style="text-align: justify; float: left; margin-right: 30px; margin-top: 30px">
